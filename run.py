@@ -9,7 +9,6 @@ import numpy as np
 from spleeter.separator import Separator
 
 THIS_PATH = os.path.abspath(os.getcwd())
-print('THIS_PATH', THIS_PATH)
 
 
 def youtube_download(artist, song, ext='mp3'):
