@@ -120,7 +120,6 @@ def main():
         else:
             raise Exception("Provide either an audio file or artist and song title")
         
-    print('***** ', args['audio_file'])
     process(audio_file=args['audio_file'])
 
 if __name__ == '__main__':
