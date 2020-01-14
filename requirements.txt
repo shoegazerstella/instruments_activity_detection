@@ -1,0 +1,3 @@
+spleeter
+youtube-dl
+pandas
