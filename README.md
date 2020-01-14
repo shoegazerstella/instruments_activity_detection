@@ -1,7 +1,8 @@
 # Instruments Activity Detection using Spleeter and Auditok
 
 Detect individual instruments activity in an audio file.
-The project relies on [spleeter](https://github.com/deezer/spleeter) for performing source separation and on [auditok](https://github.com/amsehili/auditok) for the activity detection.
+
+This project relies on [spleeter](https://github.com/deezer/spleeter) for performing source separation and on [auditok](https://github.com/amsehili/auditok) for the activity detection.
 
 ## Installation
 
