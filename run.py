@@ -5,6 +5,7 @@ import subprocess
 import pandas as pd
 import operator
 import numpy as np
+from instr_timeline import *
 
 from spleeter.separator import Separator
 
@@ -31,8 +32,7 @@ def youtube_download(artist, song, ext='mp3'):
 
 def run_spleeter(audio_file, model='spleeter:5stems'):
 
-    print('Performing source separation using', model)
-
+    print('\nPerforming source separation using', model)
     destination = os.path.splitext(audio_file)[0]
 
     if not os.path.exists(destination):
@@ -44,7 +44,7 @@ def run_spleeter(audio_file, model='spleeter:5stems'):
 
 def process(audio_file):
     
-    print('processing', audio_file)
+    print('\nProcessing', audio_file)
 
     # spleeter separation
     destination = run_spleeter(audio_file)
@@ -96,6 +96,12 @@ def process(audio_file):
     print('\nInstruments and their durations:\n')
     for k, v in duration.items():
         print(k, np.round(v, 2))
+
+    print('\nInstruments Timeline:\n')
+    timeline = instruments_timeline(datadir=destination)
+    print(timeline)
+
+    # TODO: add time-synced visualization
 
     return
 
