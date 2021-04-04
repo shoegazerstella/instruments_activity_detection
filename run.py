@@ -5,8 +5,9 @@ import subprocess
 import pandas as pd
 import operator
 import numpy as np
-from instr_timeline import *
 
+from instr_timeline import *
+from visualization import viz
 from spleeter.separator import Separator
 
 THIS_PATH = os.path.abspath(os.getcwd())
@@ -101,7 +102,9 @@ def process(audio_file):
     timeline = instruments_timeline(datadir=destination)
     print(timeline)
 
-    # TODO: add time-synced visualization
+    # live visualization
+    path = os.path.splitext( os.path.split(audio_file)[-1] )[0]
+    viz(path=path)
 
     return
 
@@ -119,6 +122,7 @@ def main():
 
     args = vars(parser.parse_args())
 
+
     if args['audio_file'] is None:
         if args['artist'] and args['song']:
             print('Downloading audio from youtube..')
@@ -126,7 +130,7 @@ def main():
             args['audio_file'] = audio_file
         else:
             raise Exception("Provide either an audio file or artist and song title")
-        
+    
     process(audio_file=args['audio_file'])
 
 if __name__ == '__main__':

@@ -44,7 +44,7 @@ def instruments_timeline(datadir):
 
     df4 = df4.sort_values(by=['start'])
 
-    df4.to_csv(os.path.join(datadir, 'tags_all.txt'), sep='\t')
+    #df4.to_csv(os.path.join(datadir, 'tags_all.txt'), sep='\t')
 
     # tags merged
     df4['tags'] = df4[df4.columns[1:]].apply(
@@ -56,5 +56,7 @@ def instruments_timeline(datadir):
 
     # round times
     df4['start'] = df4['start'].round(decimals=0)
+
+    df4.to_csv(os.path.join(datadir, 'tags.txt'), sep='\t')
 
     return df4
