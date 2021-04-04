@@ -48,6 +48,7 @@ def process(audio_file):
 
     # spleeter separation
     destination = run_spleeter(audio_file)
+    destination = os.path.join(destination, os.path.splitext(os.path.split(destination)[-1])[0])
 
     instruments = os.listdir(destination)
     instruments = [i for i in instruments if '.wav' in i]
@@ -63,7 +64,7 @@ def process(audio_file):
         input_file = os.path.join(THIS_PATH, destination, instr + '.wav')
         dest_file = os.path.join(THIS_PATH, destination, instr + '.txt')
         
-        cmd = [ 'auditok', '-i', input_file]
+        cmd = [ 'auditok', input_file]
         output = subprocess.check_output(cmd, encoding='UTF-8')
         output = output.split('\n')
         output = [i.split(' ') for i in output]
