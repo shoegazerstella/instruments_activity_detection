@@ -8,7 +8,7 @@ This project relies on [spleeter](https://github.com/deezer/spleeter) for perfor
 
 for Auditok run
 
-```
+``` bash
 git clone https://github.com/amsehili/auditok.git
 cd auditok
 python setup.py install
@@ -16,7 +16,7 @@ python setup.py install
 
 then run
 
-```
+``` bash
 pip install -r requirements.txt
 ```
 
@@ -24,13 +24,13 @@ pip install -r requirements.txt
 
 Provide an audio file
 
-```
+``` bash
 python run.py -a my_audio_file.mp3
 ```
 
 use youtube-dl to download from a query of [artist] [song]
 
-```
+``` bash
 python run.py david_bowie life_on_mars
 ```
 
@@ -38,7 +38,7 @@ python run.py david_bowie life_on_mars
 
 start-end-duration of each instrument is saved as `[instrument].txt` in the `data` dir.
 
-```
+``` bash
 Instruments Timeline
 
      start tags
@@ -56,7 +56,7 @@ Instruments Timeline
 ```
 
 
-```
+``` bash
  drums 
 
    start    end  duration
